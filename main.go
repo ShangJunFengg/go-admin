@@ -16,6 +16,8 @@ import (
 // @description  go-admin
 // @termsOfService https://github.com/hequan2017/go-admin
 
+// @Security ApiKeyAuth
+
 // @contact.name hequan
 // @contact.url https://github.com/hequan2017
 // @contact.email hequan2011@sina.com
@@ -26,8 +28,8 @@ import (
 // @host   127.0.0.1:8000
 // @BasePath
 func main() {
-	setting.Setup()
-	models.Setup()
+	setting.Setup() //初始化配置文件
+	models.Setup()  //初始化数据库
 	logging.Setup()
 	inject.Init()
 	err := inject.LoadCasbinPolicyData()

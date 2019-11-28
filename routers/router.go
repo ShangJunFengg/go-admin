@@ -4,8 +4,6 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	_ "github.com/hequan2017/go-admin/docs"
-	"github.com/hequan2017/go-admin/middleware/jwt"
-	"github.com/hequan2017/go-admin/middleware/permission"
 	"github.com/hequan2017/go-admin/pkg/setting"
 	"github.com/hequan2017/go-admin/routers/api"
 	"github.com/hequan2017/go-admin/routers/api/v1"
@@ -30,8 +28,8 @@ func InitRouter() *gin.Engine {
 
 	apiV1 := r.Group("/api/v1")
 
-	apiV1.Use(jwt.JWT())                     // token 验证
-	apiV1.Use(permission.CasbinMiddleware()) // 权限  验证
+	//apiV1.Use(jwt.JWT())                     // token 验证
+	//apiV1.Use(permission.CasbinMiddleware()) // 权限  验证
 
 	{
 

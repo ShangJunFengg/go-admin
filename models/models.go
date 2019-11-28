@@ -35,6 +35,7 @@ func Setup() {
 		return setting.DatabaseSetting.TablePrefix + defaultTableName
 	}
 
+	db.LogMode(true) //开启日志
 	db.SingularTable(true)
 	db.Callback().Create().Replace("gorm:update_time_stamp", updateTimeStampForCreateCallback)
 	db.Callback().Update().Replace("gorm:update_time_stamp", updateTimeStampForUpdateCallback)
